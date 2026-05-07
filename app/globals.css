@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-script: "Great Vibes";
+  --font-serif: "Cormorant Garamond";
+  --font-sans: "Montserrat";
+  --sage: #7a8b6f;
+  --olive: #5f6b4f;
+  --ivory: #f8f6f2;
+  --beige: #e9e2d8;
+  --brown: #6a4b3a;
+  --petal: #d9aaa9;
+  --ink: #2d2a24;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 86px;
+  background: var(--ivory);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    linear-gradient(180deg, rgba(248, 246, 242, 0.88), rgba(248, 246, 242, 1) 42%),
+    var(--ivory);
+  color: var(--ink);
+  font-family: var(--font-sans), sans-serif;
+  letter-spacing: 0;
+  text-rendering: geometricPrecision;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(120deg, rgba(122, 139, 111, 0.08), transparent 38%),
+    linear-gradient(260deg, rgba(217, 170, 169, 0.12), transparent 42%);
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  letter-spacing: 0;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: rgba(122, 139, 111, 0.28);
+  color: var(--brown);
+}
+
+img {
+  user-select: none;
+}
+
+@layer components {
+  .site-shell {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+
+  .section-padding {
+    @apply py-20 sm:py-24 lg:py-32;
+  }
+
+  .glass-panel {
+    @apply border border-white/45 bg-[#F8F6F2]/60 shadow-glass backdrop-blur-2xl;
+  }
+
+  .luxury-button {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full border px-6 py-3 text-xs font-semibold uppercase transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sage;
+  }
+
+  .section-eyebrow {
+    @apply text-xs font-semibold uppercase text-olive;
+  }
+
+  .botanical-corner {
+    @apply pointer-events-none absolute h-16 w-16 opacity-70;
+  }
+
+  .botanical-corner::before,
+  .botanical-corner::after {
+    position: absolute;
+    content: "";
+    border: 1px solid rgba(122, 139, 111, 0.34);
+  }
+
+  .botanical-corner::before {
+    inset: 0 10px 10px 0;
+    border-left: 0;
+    border-bottom: 0;
+    border-radius: 0 20px 0 0;
+  }
+
+  .botanical-corner::after {
+    top: 18px;
+    right: 0;
+    width: 34px;
+    height: 18px;
+    border-radius: 50% 50% 50% 0;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    transform: rotate(-28deg);
+  }
+}
+
+.cinematic-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.09;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.62'/%3E%3C/svg%3E");
+}
+
+.cursor-glow {
+  position: fixed;
+  z-index: 45;
+  width: 340px;
+  height: 340px;
+  pointer-events: none;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(248, 246, 242, 0.38), rgba(217, 170, 169, 0.16) 34%, transparent 69%);
+  mix-blend-mode: screen;
+  transition: transform 120ms ease-out;
+}
+
+.petal {
+  position: absolute;
+  top: 0;
+  display: block;
+  border-radius: 90% 10% 90% 10%;
+  background: linear-gradient(135deg, rgba(248, 246, 242, 0.95), rgba(217, 170, 169, 0.78));
+  box-shadow: 0 12px 32px rgba(106, 75, 58, 0.12);
+  filter: blur(0.1px);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.masonry-column {
+  break-inside: avoid;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
