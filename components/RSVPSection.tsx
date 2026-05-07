@@ -143,7 +143,7 @@ export function RSVPSection() {
                     </motion.div>
                     <p className="mt-5 font-serif text-3xl font-semibold text-brown">Your RSVP has been received.</p>
                     <p className="mt-3 text-sm leading-7 text-ink/68">
-                      Thank you for adding your warmth to Cahaya and Kal's celebration.
+                      Thank you for adding your warmth toThank you for adding your warmth to Muhammed Kamal and Fathima&#39;s celebration. Cahaya and Kal's celebration.
                     </p>
                   </div>
                 </motion.div>

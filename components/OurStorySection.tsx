@@ -53,7 +53,7 @@ export function OurStorySection() {
           <Reveal delay={0.1} className="mt-8 glass-panel relative rounded-lg p-7">
             <Sparkles className="absolute right-6 top-6 text-petal" size={22} />
             <p className="font-serif text-3xl italic leading-snug text-brown">
-              "Some promises are not spoken loudly. They are tended gently, season after season."
+             &quot;Some promises are not spoken loudly. They are tended gently, season after season.&quot;
             </p>
           </Reveal>
 
